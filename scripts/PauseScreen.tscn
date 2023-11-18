@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/img/btns/main_menu.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/btns/exit.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btns/resume.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/text/pause.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/btns/audio.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/bg/alpha.png" type="Texture" id=6]
+
+[node name="TitleScreen" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="bg" type="TextureRect" parent="HBoxContainer"]
+show_behind_parent = true
+margin_bottom = 1280.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 8.0
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 712.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+
+[node name="exit_btn" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 556.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/exit_btn"]
+
+[node name="audio-btn" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 564.0
+margin_right = 712.0
+margin_bottom = 148.0
+texture = ExtResource( 5 )
+stretch_mode = 3
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/audio-btn"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 712.0
+margin_bottom = 912.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 303.0
+margin_right = 712.0
+margin_bottom = 441.0
+
+[node name="title" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer/CenterContainer2"]
+margin_left = 184.0
+margin_right = 528.0
+margin_bottom = 138.0
+texture = ExtResource( 4 )
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 932.0
+margin_right = 712.0
+margin_bottom = 1076.0
+
+[node name="play-btn" type="TextureRect" parent="HBoxContainer/VBoxContainer/CenterContainer"]
+margin_left = 28.0
+margin_right = 684.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 138 )
+texture = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/CenterContainer/play-btn"]
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 1096.0
+margin_right = 712.0
+margin_bottom = 1280.0
+
+[node name="play-btn2" type="TextureRect" parent="HBoxContainer/VBoxContainer/CenterContainer2"]
+margin_left = 28.0
+margin_right = 684.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 138 )
+texture = ExtResource( 1 )
+stretch_mode = 3
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/CenterContainer2/play-btn2"]

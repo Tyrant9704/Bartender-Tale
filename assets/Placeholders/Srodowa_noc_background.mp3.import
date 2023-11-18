@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Srodowa_noc_background.mp3-af2f97ec94e856cffdfbfd1919c16a81.mp3str"
+
+[deps]
+
+source_file="res://assets/Placeholders/Srodowa_noc_background.mp3"
+dest_files=[ "res://.import/Srodowa_noc_background.mp3-af2f97ec94e856cffdfbfd1919c16a81.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

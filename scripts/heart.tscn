@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/img/btns/heart.png" type="Texture" id=1]
+
+[node name="heart" type="TextureRect"]
+margin_right = 42.0
+margin_bottom = 37.0
+rect_scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )

@@ -1,0 +1,213 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/img/bg/game-over.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/btns/exit.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btns/shop.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btns/restart.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/text/your-score.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/btns/main_menu.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/text/game_over.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/text/high-score.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/text/gold-earned.png" type="Texture" id=9]
+[ext_resource path="res://assets/font/Poppins-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/font/Poppins-Black.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://scripts/GameOverScreen.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 80, 80 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 4
+extra_spacing_top = -8
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 5
+extra_spacing_top = -24
+font_data = ExtResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 320, 70 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 320, 70 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 320, 70 )
+
+[node name="GameOverScreen" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+
+[node name="bg" type="TextureRect" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 720.0
+margin_bottom = 1280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="exit-btn" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 720.0
+margin_bottom = 148.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="raqe_quit" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/exit-btn"]
+shape = SubResource( 3 )
+
+[node name="txt" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 156.0
+margin_right = 720.0
+margin_bottom = 762.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="gameover" type="CenterContainer" parent="HBoxContainer/VBoxContainer/txt"]
+margin_top = 54.0
+margin_right = 720.0
+margin_bottom = 212.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/txt/gameover"]
+margin_left = 45.0
+margin_right = 674.0
+margin_bottom = 158.0
+texture = ExtResource( 7 )
+
+[node name="yourscore" type="CenterContainer" parent="HBoxContainer/VBoxContainer/txt"]
+margin_top = 232.0
+margin_right = 720.0
+margin_bottom = 292.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/txt/yourscore"]
+margin_left = 133.0
+margin_right = 586.0
+margin_bottom = 60.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/txt/yourscore/HBoxContainer"]
+margin_right = 387.0
+margin_bottom = 60.0
+texture = ExtResource( 5 )
+
+[node name="score" type="Label" parent="HBoxContainer/VBoxContainer/txt/yourscore/HBoxContainer"]
+margin_left = 395.0
+margin_right = 453.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "26"
+
+[node name="highscore" type="CenterContainer" parent="HBoxContainer/VBoxContainer/txt"]
+margin_top = 312.0
+margin_right = 720.0
+margin_bottom = 372.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/txt/highscore"]
+margin_left = 121.0
+margin_right = 598.0
+margin_bottom = 60.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/txt/highscore/HBoxContainer"]
+margin_right = 370.0
+margin_bottom = 60.0
+texture = ExtResource( 8 )
+
+[node name="hi_score" type="Label" parent="HBoxContainer/VBoxContainer/txt/highscore/HBoxContainer"]
+margin_left = 378.0
+margin_right = 477.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "2137"
+
+[node name="gold earned" type="CenterContainer" parent="HBoxContainer/VBoxContainer/txt"]
+margin_top = 392.0
+margin_right = 720.0
+margin_bottom = 464.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/txt/gold earned"]
+margin_left = 152.0
+margin_right = 567.0
+margin_bottom = 72.0
+texture = ExtResource( 9 )
+
+[node name="gold_value" type="CenterContainer" parent="HBoxContainer/VBoxContainer/txt"]
+margin_top = 484.0
+margin_right = 720.0
+margin_bottom = 551.0
+
+[node name="gold_earned" type="Label" parent="HBoxContainer/VBoxContainer/txt/gold_value"]
+margin_left = 338.0
+margin_right = 381.0
+margin_bottom = 67.0
+custom_colors/font_color = Color( 0.933333, 0.678431, 0.054902, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "5"
+
+[node name="btns" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 770.0
+margin_right = 720.0
+margin_bottom = 1280.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer/btns"]
+margin_right = 720.0
+margin_bottom = 143.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/btns/CenterContainer"]
+margin_left = 33.0
+margin_right = 687.0
+margin_bottom = 143.0
+texture = ExtResource( 4 )
+
+[node name="restart" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/btns/CenterContainer/TextureRect"]
+shape = SubResource( 4 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer/VBoxContainer/btns"]
+margin_top = 163.0
+margin_right = 720.0
+margin_bottom = 306.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/btns/CenterContainer2"]
+margin_left = 33.0
+margin_right = 687.0
+margin_bottom = 143.0
+texture = ExtResource( 3 )
+
+[node name="shop" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/btns/CenterContainer2/TextureRect"]
+shape = SubResource( 5 )
+
+[node name="CenterContainer3" type="CenterContainer" parent="HBoxContainer/VBoxContainer/btns"]
+margin_top = 326.0
+margin_right = 720.0
+margin_bottom = 510.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/btns/CenterContainer3"]
+margin_left = 32.0
+margin_right = 688.0
+margin_bottom = 184.0
+texture = ExtResource( 6 )
+
+[node name="main_menu" type="TouchScreenButton" parent="HBoxContainer/VBoxContainer/btns/CenterContainer3/TextureRect"]
+shape = SubResource( 6 )
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/exit-btn/raqe_quit" to="." method="_on_raqe_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btns/CenterContainer/TextureRect/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btns/CenterContainer2/TextureRect/shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/btns/CenterContainer3/TextureRect/main_menu" to="." method="_on_main_menu_pressed"]

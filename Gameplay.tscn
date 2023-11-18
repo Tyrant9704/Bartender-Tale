@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/img/btns/right.png" type="Texture" id=1]
+[ext_resource path="res://assets/img/btns/dwarf.png" type="Texture" id=2]
+[ext_resource path="res://assets/img/btns/human.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/btns/pause.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/btns/left.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/btns/goblin.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/btns/elf.png" type="Texture" id=7]
+[ext_resource path="res://assets/font/Poppins-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/img/btns/heart.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 4
+extra_spacing_top = -12
+font_data = ExtResource( 8 )
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 680.0
+margin_bottom = 1240.0
+alignment = 2
+
+[node name="top info" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 680.0
+margin_bottom = 950.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="pause" type="TextureRect" parent="VBoxContainer/top info"]
+margin_right = 206.0
+margin_bottom = 950.0
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="VBoxContainer/top info/pause"]
+
+[node name="heart1" type="TextureRect" parent="VBoxContainer/top info"]
+margin_left = 210.0
+margin_right = 294.0
+margin_bottom = 950.0
+texture = ExtResource( 9 )
+
+[node name="heart2" type="TextureRect" parent="VBoxContainer/top info"]
+margin_left = 298.0
+margin_right = 382.0
+margin_bottom = 950.0
+texture = ExtResource( 9 )
+
+[node name="heart3" type="TextureRect" parent="VBoxContainer/top info"]
+margin_left = 386.0
+margin_right = 470.0
+margin_bottom = 950.0
+texture = ExtResource( 9 )
+
+[node name="NinePatchRect" type="VBoxContainer" parent="VBoxContainer/top info"]
+margin_left = 474.0
+margin_right = 680.0
+margin_bottom = 950.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/top info/NinePatchRect"]
+margin_right = 206.0
+margin_bottom = 79.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "123"
+align = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 954.0
+margin_right = 680.0
+margin_bottom = 1240.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 680.0
+margin_bottom = 286.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 680.0
+margin_bottom = 128.0
+custom_constants/separation = 30
+alignment = 2
+
+[node name="goblin" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 393.0
+margin_right = 522.0
+margin_bottom = 128.0
+texture = ExtResource( 6 )
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/goblin"]
+position = Vector2( 133, 132 )
+
+[node name="dwarf" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 552.0
+margin_right = 680.0
+margin_bottom = 128.0
+texture = ExtResource( 2 )
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/dwarf"]
+position = Vector2( 0, 132 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 158.0
+margin_right = 680.0
+margin_bottom = 286.0
+size_flags_horizontal = 3
+custom_constants/separation = 30
+
+[node name="left" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 94.0
+margin_bottom = 128.0
+rect_clip_content = true
+texture = ExtResource( 5 )
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/left"]
+position = Vector2( 552, 0 )
+
+[node name="right" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 124.0
+margin_right = 364.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+texture = ExtResource( 1 )
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/right"]
+position = Vector2( 428, 0 )
+
+[node name="btns" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 394.0
+margin_right = 680.0
+margin_bottom = 128.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/btns"]
+margin_right = 286.0
+margin_bottom = 128.0
+custom_constants/separation = 30
+
+[node name="human" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/btns/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/btns/HBoxContainer/human"]
+position = Vector2( 132, 0 )
+
+[node name="elf" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/btns/HBoxContainer"]
+margin_left = 158.0
+margin_right = 286.0
+margin_bottom = 128.0
+texture = ExtResource( 7 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/btns/HBoxContainer/elf"]
